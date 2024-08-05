@@ -24,7 +24,7 @@ public class CloneTrooper {
     /**
      * atributo del rango militar
      */
-    private String rank;
+    private String rango;
     /**
      * Atributo de su estado actual
      */
@@ -42,14 +42,14 @@ public class CloneTrooper {
     public CloneTrooper(
         String ctNumber,
         String name,
-        String rank,
+        String rango,
         String combatStatus,
         String jediCommander,
         String additionalInfo) {
 
         this.ctNumber = ctNumber;
         this.name = name;
-        this.rank = rank;
+        this.rango = rango;
         this.combatStatus = combatStatus;
         this.jediCommander = jediCommander;
         this.additionalInfo = additionalInfo;
@@ -84,14 +84,14 @@ public class CloneTrooper {
     /**
      * Get del rango militar
      */
-    public String getRank() {
-        return rank;
+    public String getRango() {
+        return rango;
     }
     /**
      * Set del rango militar
      */
-    public void setRank(String rank) {
-        this.rank = rank;
+    public void setRango(String rango) {
+        this.rango = rango;
     }
     /**
      * Get de su estado actual
@@ -135,7 +135,7 @@ public class CloneTrooper {
         return "CloneTrooper{" +
                 "ctNumber='" + ctNumber + '\'' +
                 ", name='" + name + '\'' +
-                ", rank='" + rank + '\'' +
+                ", rango='" + rango + '\'' +
                 ", combatStatus='" + combatStatus + '\'' +
                 ", jediCommander='" + jediCommander + '\'' +
                 ", additionalInfo='" + additionalInfo + '\'' +

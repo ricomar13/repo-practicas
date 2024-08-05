@@ -85,7 +85,7 @@ public class CloneTrooperRestController {
     public ResponseEntity<?> putClon(@RequestBody CloneTrooper cloneTrooper){
         for (CloneTrooper clon : Clones){
             if (clon.getCtNumber() == cloneTrooper.getCtNumber()) {
-                clon.setRank(cloneTrooper.getRank());
+                clon.setRango(cloneTrooper.getRango());
                 clon.setCombatStatus(cloneTrooper.getCombatStatus());
                 clon.setAdditionalInfo(cloneTrooper.getAdditionalInfo());
 
@@ -119,8 +119,8 @@ public class CloneTrooperRestController {
                 if (cloneTrooper.getName() != null) {
                     c.setName(cloneTrooper.getName());
                 }
-                if (cloneTrooper.getRank() != null) {
-                    c.setRank(cloneTrooper.getRank());
+                if (cloneTrooper.getRango() != null) {
+                    c.setRango(cloneTrooper.getRango());
                 }
                 if (cloneTrooper.getCombatStatus() != null) {
                     c.setCombatStatus(cloneTrooper.getCombatStatus());
