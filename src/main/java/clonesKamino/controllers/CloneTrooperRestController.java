@@ -18,7 +18,7 @@ public class CloneTrooperRestController {
     Antes de conectar a BD simularé la obtencion de los datos
     por medio de una lista. Posteriormente lo cambiaré a Mysql
      */
-    private List<CloneTrooper> Clones = new ArrayList<>(Arrays.asList(
+    public List<CloneTrooper> Clones = new ArrayList<>(Arrays.asList(
             new CloneTrooper(7567, "Rex","Captain", "Active", "Anakin Skywalker", "Nicknamed 'Rex', loyal and capable leader"),
             new CloneTrooper(5555, "Fives","ARC Trooper", "Deceased", "Anakin Skywalker", "Known for his independent thinking and bravery"),
             new CloneTrooper(2224, "Cody","Commander", "Active", "Obi-Wan Kenobi", "Often seen with his distinctive orange markings"),
