@@ -1,5 +1,5 @@
 package clonesKamino.domain;
-//Esta clase seria como el DTO con los atributos de entrada, con getters y setters
+//Esta clase sería como el DTO con los atributos de entrada, con getters y setters
 
 import jakarta.persistence.*;
 
@@ -14,12 +14,12 @@ public class CloneTrooper {
 
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //ACTUAL ERROR, el id quiere autoincrementarse como INT pero yo tengo un String
 
     /**
      * Atributo del identificador del clon y nombre
      */
-    private String ctNumber;
+    private int ctNumber;
     private String name;
     /**
      * atributo del rango militar
@@ -40,14 +40,14 @@ public class CloneTrooper {
 
     //Constructor para poblar los atributos, es decir asignar valores
     public CloneTrooper(
-        String ctNumber,
-        String name,
-        String rango,
-        String combatStatus,
-        String jediCommander,
-        String additionalInfo) {
+            int ctNumber,
+            String name,
+            String rango,
+            String combatStatus,
+            String jediCommander,
+            String additionalInfo) {
 
-        this.ctNumber = ctNumber;
+        this.ctNumber = Integer.parseInt(String.valueOf(ctNumber));
         this.name = name;
         this.rango = rango;
         this.combatStatus = combatStatus;
@@ -58,13 +58,13 @@ public class CloneTrooper {
     /**
      * Get del identificador del clon
      */
-    public String getCtNumber() {
+    public int getCtNumber() {
         return ctNumber;
     }
     /**
      * Set del identificador del clon
      */
-    public void setCtNumber(String ctNumber) {
+    public void setCtNumber(int ctNumber) {
         this.ctNumber = ctNumber;
     }
     /**

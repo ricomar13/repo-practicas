@@ -19,10 +19,10 @@ public class CloneTrooperRestController {
     por medio de una lista. Posteriormente lo cambiaré a Mysql
      */
     private List<CloneTrooper> Clones = new ArrayList<>(Arrays.asList(
-            new CloneTrooper("CT-7567", "Rex","Captain", "Active", "Anakin Skywalker", "Nicknamed 'Rex', loyal and capable leader"),
-            new CloneTrooper("CT-5555", "Fives","ARC Trooper", "Deceased", "Anakin Skywalker", "Known for his independent thinking and bravery"),
-            new CloneTrooper("CC-2224", "Cody","Commander", "Active", "Obi-Wan Kenobi", "Often seen with his distinctive orange markings"),
-            new CloneTrooper("CT-1409", "Echo","ARC Trooper", "Active", "Anakin Skywalker", "Rescued and integrated with cybernetic enhancements")
+            new CloneTrooper(7567, "Rex","Captain", "Active", "Anakin Skywalker", "Nicknamed 'Rex', loyal and capable leader"),
+            new CloneTrooper(5555, "Fives","ARC Trooper", "Deceased", "Anakin Skywalker", "Known for his independent thinking and bravery"),
+            new CloneTrooper(2224, "Cody","Commander", "Active", "Obi-Wan Kenobi", "Often seen with his distinctive orange markings"),
+            new CloneTrooper(1409, "Echo","ARC Trooper", "Active", "Anakin Skywalker", "Rescued and integrated with cybernetic enhancements")
     ));
 
     @GetMapping
@@ -40,14 +40,14 @@ public class CloneTrooperRestController {
     @GetMapping("/{ctNumber}")
     //public <CloneTrooper> getClon(@PathVariable String ctNumber){
     //para poder retornar mensaje de error o el objeto CloneTrooper uso"?"
-    public ResponseEntity<?> getClon(@PathVariable String ctNumber){
+    public ResponseEntity<?> getClon(@PathVariable int ctNumber){
         for (CloneTrooper c : Clones){
-            if (c.getCtNumber().equalsIgnoreCase(ctNumber)) {
+            if (c.getCtNumber() == ctNumber) {
                 return ResponseEntity.ok(c);
             }
         }
         /*
-        En este caso retorno null en lugar de exepcion 404
+        En este caso retorno null en lugar de exception 404
         por ahora, posteriormente lo cambio
          */
         //return null;
@@ -76,7 +76,7 @@ public class CloneTrooperRestController {
     }
 
     /*
-    Compara el id del clon en la lista creada con el id a recibir a traves
+    Compara él, id del clon en la lista creada con el id a recibir a traves
     del @RequestBody, si coinciden
     Se pueden cambiar los valores de la lista por nuevas entradas
      */
