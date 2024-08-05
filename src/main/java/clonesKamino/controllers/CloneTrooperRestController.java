@@ -12,7 +12,7 @@ import java.util.Objects;
 
 @RestController
 //@RequestMapping a nivel de Clase
-@RequestMapping("/cones") //Esta anotacion sirve para unificar rutas correspondientes a los endpoint. Reemplaza que en cada anotacion especifique la ruta /clones
+@RequestMapping("/clones") //Esta anotacion sirve para unificar rutas correspondientes a los endpoint. Reemplaza que en cada anotacion especifique la ruta /clones
 public class CloneTrooperRestController {
     /*
     Antes de conectar a BD simulare la obtencion de los datos
@@ -39,7 +39,7 @@ public class CloneTrooperRestController {
     //voy a diferenciarlos haciendo uso de un parametro (ctNumber)
     @GetMapping("/{ctNumber}")
     //public <CloneTrooper> getClon(@PathVariable String ctNumber){
-    //para poder retornar mensaje de error o el objeto CloneTrooper uso "?"
+    //para poder retornar mensaje de error o el objeto CloneTrooper uso"?"
     public ResponseEntity<?> getClon(@PathVariable String ctNumber){
         for (CloneTrooper c : Clones){
             if (c.getCtNumber().equalsIgnoreCase(ctNumber)) {
