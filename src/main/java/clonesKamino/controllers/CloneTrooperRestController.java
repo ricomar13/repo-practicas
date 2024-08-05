@@ -15,8 +15,8 @@ import java.util.Objects;
 @RequestMapping("/clones") //Esta anotacion sirve para unificar rutas correspondientes a los endpoint. Reemplaza que en cada anotacion especifique la ruta /clones
 public class CloneTrooperRestController {
     /*
-    Antes de conectar a BD simulare la obtencion de los datos
-    por medio de una lista. Posteriormente lo cambiare a Mysql
+    Antes de conectar a BD simularé la obtencion de los datos
+    por medio de una lista. Posteriormente lo cambiaré a Mysql
      */
     private List<CloneTrooper> Clones = new ArrayList<>(Arrays.asList(
             new CloneTrooper("CT-7567", "Rex","Captain", "Active", "Anakin Skywalker", "Nicknamed 'Rex', loyal and capable leader"),
