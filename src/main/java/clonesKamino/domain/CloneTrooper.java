@@ -1,11 +1,23 @@
 package clonesKamino.domain;
 //Esta clase seria como el DTO con los atributos de entrada, con getters y setters
 
+import jakarta.persistence.*;
+
+@Entity //Esto es para que la dependencia JPA lo reconozca como entidad
+@Table(name = "clones republica") //nombre de la tabla para mapear en la base de datos
 public class CloneTrooper {
 //atributos privados /* Attributes section for the DTO */
 
+    /*JPA pide que generes clave primaria para nuestra Entidad con @Id y generar
+    los atributos con @GenerateValue
+     */
+
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     /**
-     * Atributo del identificador del clon
+     * Atributo del identificador del clon y nombre
      */
     private String ctNumber;
     private String name;
@@ -116,5 +128,17 @@ public class CloneTrooper {
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
+    }
+
+    @Override
+    public String toString() {
+        return "CloneTrooper{" +
+                "ctNumber='" + ctNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", rank='" + rank + '\'' +
+                ", combatStatus='" + combatStatus + '\'' +
+                ", jediCommander='" + jediCommander + '\'' +
+                ", additionalInfo='" + additionalInfo + '\'' +
+                '}';
     }
 }
